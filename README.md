@@ -8,11 +8,13 @@ The project will utilize the concepts of data abstraction, object orientation, a
 
 ### External Technologies 
 Spotify Web API - To communicate with the Spotify Web App which will build the playlist
+
 OAuth – Authorization protocol to access user information
 
 ### Data Sets or other Source Materials
 Data from a music library will be imported from a .csv file. This data can be acquired by selecting the music from your preferred music manager and copying it into an excel spreadsheet. From there export the spreadsheet as a .csv file.
-###Deliverable and Demonstration
+
+### Deliverable and Demonstration
 The end product will have the user upload a file and enter their Spotify credentials. Moreover, a playlist will be created and the data will be parsed to add all the songs into the playlist. When the process is complete, the user will be presented with a webpage of the playlist. 
 
 ### Evaluation of Results
