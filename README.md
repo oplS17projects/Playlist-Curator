@@ -21,10 +21,7 @@ The end product will have the user upload a file and enter their Spotify credent
 The project will be successful if the curated playlist contains the whole of the imported data and if the procedure is accomplished relatively quickly (less than 5 minutes). Additionally, another barometer for success is the ease in which the user accomplishes their task.  
 
 ## Architecture Diagram
-Upload the architecture diagram you made for your slide presentation to your repository, and include it in-line here.
-
-Create several paragraphs of narrative to explain the pieces and how they interoperate.
-
+![GitHub Image](diagram1.png?raw=true "Diagram")
 ## Schedule
 ### First Milestone (Sun Apr 9)
 HTTP client setup. Functionality inlcudes uploading/importing the .csv file and user input formated correctly for the client.
