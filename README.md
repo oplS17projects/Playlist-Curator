@@ -1,10 +1,10 @@
 # Playlist-Curator
 
 ### Statement
-OPL Final Project by Ethan Cumming and Christian Okoli. We will utilize the spotify api to create a playlist from a .csv file
+OPL Final Project by Ethan Cumming and Christian Okoli. We will utilize the spotify api to create a playlist from a .csv file.
 
 ### Analysis
-The project will utilize the concepts of data abstraction, object orientation, and recursion. The data abstraction is primarily in how we will import our data from a .csv file and transform the data into an acceptable type for the Spotify Web API to understand. Additionally, if we are to access a user account from Spotify will need OAuth library, which uses abstracted for security purposes. Furthermore, object orientation will be used with the web-server package which can create an HTTP client based on user input. Finally, recursion will be used to parse and feed individual track data to the Spotify API and into the playlist.
+The project will utilize the concepts of data abstraction, object orientation, and recursion. Data abstraction is used primarily to import our data from a .csv file and transform the data into an acceptable type for the Spotify Web API to understand(XML/JSON). Additionally, if we are to access a user account from Spotify will need OAuth library, which uses abstraction for security purposes. Furthermore, object orientation will be used with the web-server package which can create an HTTP client based on user input. Finally, recursion will be used to parse and feed individual track data to the Spotify API to complete a playlist.
 
 ### External Technologies 
 Spotify Web API - To communicate with the Spotify Web App which will build the playlist
@@ -36,23 +36,9 @@ HTTP client communicates with Spotify API. Functionality includes generating a p
 A browser opening the link to the playlist sent by the Spotify. A feature that will be necessary for the presentation.
 
 ## Group Responsibilities
-Here each group member gets a section where they, as an individual, detail what they are responsible for in this project. Each group member writes their own Responsibility section. Include the milestones and final deliverable.
 
-Please use Github properly: each individual must make the edits to this file representing their own section of work.
-
-**Additional instructions for teams of three:** 
-* Remember that you must have prior written permission to work in groups of three (specifically, an approved `FP3` team declaration submission).
-* The team must nominate a lead. This person is primarily responsible for code integration. This work may be shared, but the team lead has default responsibility.
-* The team lead has full partner implementation responsibilities also.
-* Identify who is team lead.
-
-In the headings below, replace the silly names and GitHub handles with your actual ones.
-
-### Susan Scheme @susanscheme
-will write the....
+### Ethan Cumming @EthanNC
+I will work on uploading the .csv to the HTTP client and formatting the data. From there I will work on how to send the data from the client to Spotify and making unit tests to ensure all the data reaches it destinations and completes certain actions. 
 
 ### Leonard Lambda @lennylambda
 will work on...
-
-### Frank Funktions @frankiefunk 
-Frank is team lead. Additionally, Frank will work on...   
