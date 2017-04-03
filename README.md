@@ -39,3 +39,6 @@ I will work on uploading the .csv to the HTTP client and formatting the data. Fr
 
 ### Christian @cokoli238
 I will work on passing login credentials to server.
+
+### Google Slides
+https://docs.google.com/presentation/d/1IHOEZ6mSUyZ_kg8vwIdXGPaEPcjL8m4pBCqgsoNCcNc/edit?usp=sharing
