@@ -22,6 +22,7 @@ The project will be successful if the curated playlist contains the whole of the
 
 ## Architecture Diagram
 ![GitHub Image](diagram1.png?raw=true "Diagram")
+
 ## Schedule
 ### First Milestone (Sun Apr 9)
 HTTP client setup. Functionality inlcudes uploading/importing the .csv file and user input formated correctly for the client.
@@ -38,7 +39,7 @@ A browser opening the link to the playlist sent by the Spotify. A feature that w
 I will work on uploading the .csv to the HTTP client and formatting the data. From there I will work on how to send the data from the client to Spotify and making unit tests to ensure all the data reaches it destinations and completes certain actions. 
 
 ### Christian @cokoli238
-I will work on passing login credentials to server.
+I will work on passing login credentials to the server, receiving data from the Spotify client, and manipulating  the browser through racket to play the user created spotify playlist. 
 
 ### Google Slides
 https://docs.google.com/presentation/d/1IHOEZ6mSUyZ_kg8vwIdXGPaEPcjL8m4pBCqgsoNCcNc/edit?usp=sharing
