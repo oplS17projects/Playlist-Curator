@@ -40,5 +40,5 @@ A browser opening the link to the playlist sent by the Spotify. A feature that w
 ### Ethan Cumming @EthanNC
 I will work on uploading the .csv to the HTTP client and formatting the data. From there I will work on how to send the data from the client to Spotify and making unit tests to ensure all the data reaches it destinations and completes certain actions. 
 
-### Leonard Lambda @lennylambda
-will work on...
+### Christian @cokoli238
+I will work on passing login credentials to server.
