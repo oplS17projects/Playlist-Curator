@@ -3,10 +3,12 @@
 ;;http://www.ccs.neu.edu/home/types/racket-doc/web-server/run.html
 ;;https://developer.spotify.com/web-api/tutorial/#disqus_thread
 
+;;issue on clicking button to login GET to localhost/login is not found..
+;;"Connection was rest"
 
 (require web-server/servlet
          web-server/servlet-env
-         web-server/http/bindings);;need those bindings yall
+         web-server/http/bindings);;need those bindings yall, aslo will need the json req
 
 
 (define root (current-directory))
@@ -28,3 +30,4 @@
                #:server-root-path "/")
 
 ;open html file to input user name and such....
+

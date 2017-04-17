@@ -1,8 +1,0 @@
-#lang racket
-
-(require (planet dmac/spin) csv-reading)
-
-(post "/"
-      (lambda () "Hello" ))
-
- (run)
