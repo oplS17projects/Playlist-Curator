@@ -11,9 +11,11 @@
 <a href="/login" class="btn">Login</a>
 
 <h2>Step Two: Create A Playlist</h2>
-<form>
-	<button id= "create-button" class="btn"> Create</button>
-</form>
+<button id= "create-button" class="btn"> Create Playlist</button>
+
+
+<h2>Step Three: Add Songs to Playlist</h2>
+<button id= "add-song" class="btn"> Add Tracks</button>
 
 <style type="text/css">
 
@@ -36,6 +38,13 @@ $('#create-button').click(function() {
     $.ajax({
         type: 'GET',
         url: 'http://localhost:8888/newList'
+    });
+});
+
+$('#add-song').click(function() {
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost:8888/addSong'
     });
 });
 </script>

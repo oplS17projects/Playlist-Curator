@@ -12,9 +12,11 @@ var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var SpotifyWebApi = require('spotify-web-api-node');
+var jf = require('jsonfile');
+var fs = require('fs');
 
-var client_id = 'ClientID'; // Your client id
-var client_secret = 'ClientSecret'; // Your secret
+var client_id = '<client_id>'; // Your client id
+var client_secret = '<client_secret>'; // Your secret
 var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 
 var spotifyApi = new SpotifyWebApi({
@@ -140,10 +142,80 @@ app.get('/newList', function(req, res) {
 	//console.log(autho_code);
 
 	spotifyApi.createPlaylist('ethanlgt', 'New!')
+  .then(function(data) {
+
+    playlistId = data.body['id']
+    console.log(playlistId);
+
+  });
 	/*
 
 	*/
     res.redirect('/')
+});
+
+
+app.get('/addSong', function(req, res) {
+
+ var songArr = new Array();
+ var authorArr = new Array();
+ var idArr = new Array();
+ var count = 0;
+ var bestSong;
+
+
+
+ console.log(playlistId)
+
+  //opens file
+  fs.readFile( '../music.json' ,"utf-8" ,function(err, obj) {
+
+    try {
+      obj = JSON.parse(obj);
+    }
+    catch(e) {
+      console.log("Error With Parsing");
+      return;
+    }
+
+    for(var k in obj){
+      songArr[k] = obj[k].Song;
+      authorArr[k] = obj[k].Author;
+    }
+
+    count = obj.length;
+    var strArr = new Array();
+    //main loop for search and adding
+    for(var i = 0; i < count; i++) {
+      strArr[i] = 'track:' + songArr[i] + ' ' + 'artist:' + authorArr[i];
+      console.log(strArr[i]);
+    
+    //search array of tracks for
+    spotifyApi.searchTracks(strArr[i])
+      .then(function(data) {
+
+      //find the most popular result and save it to variable
+      console.log('Number of Found track', data.body.tracks.total);
+      var firstPage = data.body.tracks.items;
+      firstPage.forEach(function(track, index) {
+          if(index === 0){
+            bestSong = 'spotify:track:' + track.id;
+            //idArr.push(bestSong);
+          }
+          console.log(index + ': ' + track.id + ' (' + track.popularity + ')');
+      });
+
+      //console.log(firstPage[0].track.id)
+      }).then(function(data) {
+       console.log(bestSong); 
+       return spotifyApi.addTracksToPlaylist('ethanlgt', playlistId, bestSong);
+    }).then(function(data) {
+      console.log('Track is added');
+    })
+  }
+  });
+
+  res.redirect('/')
 });
 
 console.log('Listening on 8888');
