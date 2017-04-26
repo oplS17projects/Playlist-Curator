@@ -4,18 +4,17 @@
 OPL Final Project by Ethan Cumming and Christian Okoli. We will utilize the spotify api to create a playlist from a .csv file.
 
 ### Analysis
-The project will utilize the concepts of data abstraction, object orientation, and recursion. Data abstraction is used primarily to import our data from a .csv file and transform the data into an acceptable type for the Spotify Web API to understand(XML/JSON). Additionally, if we are to access a user account from Spotify will need OAuth library, which uses abstraction for security purposes. Furthermore, object orientation will be used with the web-server package which can create an HTTP client based on user input. Finally, recursion will be used to parse and feed individual track data to the Spotify API to complete a playlist.
+The project utilizes the concepts of data abstraction and object orientation. Data abstraction is used primarily to import our data from a .csv file and transform the data into an acceptable type for the Spotify Web API to understand (JSON). The racket json library uses hashes to create JSON expressions which we output to create a .json file.  Furthermore, both concepts ae used with the node web web-server package which can create an HTTP client and makes abstracted calls to the spotify api . 
 
 ### External Technologies 
 Spotify Web API - To communicate with the Spotify Web App which will build the playlist
-
-OAuth – Authorization protocol to access user information
+Node JS with libraries - Server to run our webpage requests from.
 
 ### Data Sets or other Source Materials
-Data from a music library will be imported from a .csv file. This data can be acquired by selecting the music from your preferred music manager and copying it into an excel spreadsheet. From there export the spreadsheet as a .csv file.
+Data from a music library is imported from a .csv file. This data can be acquired by selecting the music from your preferred music manager and copying it into an excel spreadsheet. From there, export to a spreadsheet as a .csv file.
 
 ### Deliverable and Demonstration
-The end product will have the user upload a file and enter their Spotify credentials. Moreover, a playlist will be created and the data will be parsed to add all the songs into the playlist. When the process is complete, the user will be presented with a webpage of the playlist. 
+The end product have the user load a .csv file and enter their Spotify credentials. Moreover, a playlist will be created and the data will be parsed to add all the songs into the playlist. When the process is complete, the user is be presented with a of the playlist on their spotify account. 
 
 ### Evaluation of Results
 The project will be successful if the curated playlist contains the whole of the imported data and if the procedure is accomplished relatively quickly (less than 5 minutes). Additionally, another barometer for success is the ease in which the user accomplishes their task.  
@@ -36,7 +35,7 @@ A browser opening the link to the playlist sent by the Spotify. A feature that w
 ## Group Responsibilities
 
 ### Ethan Cumming @EthanNC
-I will work on uploading the .csv to the HTTP client and formatting the data. From there I will work on how to send the data from the client to Spotify and making unit tests to ensure all the data reaches it destinations and completes certain actions. 
+I worked on uploading the converted .csv file to the server and and parsing the document data. The data is then sent to to the spotify api to retrieve a song id. The song IDs are then used for adding to the playlist.
 
 ### Christian @cokoli238
 I will work on passing login credentials to the server, receiving data from the Spotify client, and manipulating  the browser through racket to play the user created spotify playlist. 
