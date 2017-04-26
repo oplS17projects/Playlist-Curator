@@ -38,7 +38,7 @@ A browser opening the link to the playlist sent by the Spotify. A feature that w
 I worked on uploading the converted .csv file to the server and and parsing the document data. The data is then sent to to the spotify api to retrieve a song id. The song IDs are then used for adding to the playlist.
 
 ### Christian @cokoli238
-I will work on passing login credentials to the server, receiving data from the Spotify client, and manipulating  the browser through racket to play the user created spotify playlist. 
+I helped work on hashing the .csv file to js expression and then json file. I also tried making a racket web server to interact with spotify api but that did not go as planned.
 
 ### Google Slides
 https://docs.google.com/presentation/d/1IHOEZ6mSUyZ_kg8vwIdXGPaEPcjL8m4pBCqgsoNCcNc/edit?usp=sharing
