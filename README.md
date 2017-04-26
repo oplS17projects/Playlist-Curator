@@ -20,7 +20,7 @@ The end product have the user load a .csv file and enter their Spotify credentia
 The project will be successful if the curated playlist contains the whole of the imported data and if the procedure is accomplished relatively quickly (less than 5 minutes). Additionally, another barometer for success is the ease in which the user accomplishes their task.  
 
 ## Architecture Diagram
-![GitHub Image](diagram1.png?raw=true "Diagram")
+![GitHub Image](diagram1(1).png?raw=true "Diagram")
 
 ## Schedule
 ### First Milestone (Sun Apr 9)
