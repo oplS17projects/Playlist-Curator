@@ -12,11 +12,10 @@ var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var SpotifyWebApi = require('spotify-web-api-node');
-var jf = require('jsonfile');
 var fs = require('fs');
 
-var client_id = '<client_id>'; // Your client id
-var client_secret = '<client_secret>'; // Your secret
+var client_id = 'client_id'; // Your client id
+var client_secret = 'client_secret'; // Your secret
 var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 
 var spotifyApi = new SpotifyWebApi({
@@ -33,6 +32,8 @@ var autho_code = null;
  * @param  {number} length The length of the string
  * @return {string} The generated string
  */
+
+var userID;
 
 var generateRandomString = function(length) {
   var text = '';
@@ -64,8 +65,9 @@ app.get('/login', function(req, res) {
       client_id: client_id,
       scope: scope,
       redirect_uri: redirect_uri,
-      state: state
+      state: state,
     }));
+  //console.log("THIS IS YOU:");
 });
 
 app.get('/callback', function(req, res) {
@@ -116,7 +118,8 @@ app.get('/callback', function(req, res) {
 
         // use the access token to access the Spotify Web API
         request.get(options, function(error, response, body) {
-          console.log(body);
+          userID = body.id
+          console.log(userID);
         });
 
         // we can also pass the token to the browser to make requests from there
@@ -141,16 +144,14 @@ app.get('/newList', function(req, res) {
 	//console.log('Creating New List');
 	//console.log(autho_code);
 
-	spotifyApi.createPlaylist('ethanlgt', 'New!')
+
+	spotifyApi.createPlaylist(userID, 'New!')
   .then(function(data) {
 
     playlistId = data.body['id']
     console.log(playlistId);
 
   });
-	/*
-
-	*/
     res.redirect('/')
 });
 
@@ -208,7 +209,7 @@ app.get('/addSong', function(req, res) {
       //console.log(firstPage[0].track.id)
       }).then(function(data) {
        console.log(bestSong); 
-       return spotifyApi.addTracksToPlaylist('ethanlgt', playlistId, bestSong);
+       return spotifyApi.addTracksToPlaylist(userID, playlistId, bestSong);
     }).then(function(data) {
       console.log('Track is added');
     })
