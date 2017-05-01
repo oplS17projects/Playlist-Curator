@@ -57,7 +57,7 @@ The following code reads the .csv file and places the data into a list.
 (define body (rest music-list))
 
 (define song (string->symbol (first header))) ; returns 'song
-(define artist (string->symbol (second header))) song 'author
+(define artist (string->symbol (second header))) ;song 'author
 (define time (string->symbol (third header))) ; 'time
  ```
 
@@ -76,7 +76,7 @@ The code below is a very manual method for creating a JSON object.
 (define jsexpr9 (make-hash (list (cons time (third (third body))))))
 ```
 
-If using ```(hash-ref 'song jsexp7)'''  would return one of the songs from the original.
+If using ```(hash-ref 'song jsexp7)```  would return one of the songs from the original.
 
 ``` 
 (define track3 (hash-append jsexpr7 jsexpr8 jsexpr9))
