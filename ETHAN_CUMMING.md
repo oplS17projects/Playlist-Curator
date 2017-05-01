@@ -87,7 +87,7 @@ If using ```(hash-ref 'song jsexp7)```  would return one of the songs from the o
           (map hash->list hashes))))
 
 ```
-After we have a hash of the song, author, and time, ```hash-append``` is used to combine an infinite amount of individual hashes into one has hash. In this case the output hash forms a track.
+After we have a hash of the song, author, and time, ```hash-append``` is used to combine an infinite amount of individual hashes into one hash. The combination forms a hash with three keys and their respective values are enclosed in a JSON expression. The resulting expression represents three hashes of song, author, time all hashed into what is effectively one row from the original CSV file.
 
 ```
 (define song-list (list track1 track2 track3))
